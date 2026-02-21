@@ -1,0 +1,17 @@
+[package]
+name = "eqos"
+version = "0.1.0"
+edition = "2021"
+description = "Equilibrium OS — A game-theory-based RTOS scheduler for ARM Cortex-M4"
+license = "MIT"
+
+[dependencies]
+cortex-m = { version = "0.7", features = ["critical-section-single-core"] }
+cortex-m-rt = "0.7"
+panic-halt = "1.0"
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+debug = true
